@@ -23,12 +23,7 @@ a{
 .navitem{
     flex: 1;
 }
-@media screen and (max-width: 600px) {
-    .nav{
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-}
+
 
 .navitem:hover{
     background-color:#53819b;
@@ -68,16 +63,63 @@ a{
 
 
 .actions{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     margin-top: 40px;
     gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card{
+    flex: 1;
+    cursor: pointer;
+    background-color: #9bbbcd;
+    text-align: center;
+}
+
+.card-img{
+    display: grid;
     justify-content: center;
 }
 
+.card img{
+    max-width: 100%;
+    min-width: 300px;
+}
 
 
 .footer{
     background-color:black;
     height: 200px;
+}
+
+
+/*MENU BAR MOBILE */
+#menu{
+    display: none;
+}
+#menubtn{
+    display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .nav{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #menubtn{
+        display: grid;
+        justify-content: center;
+    }
+    #menubtn:hover{
+        background-color: #53819b;
+    }
+
+    #menu:checked ~ .nav{
+        display: none;
+    }
+    #menu:not(:checked) ~ .nav{
+        display: grid;
+    }
+    
 }
