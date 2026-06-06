@@ -1,7 +1,7 @@
 body{
     margin: auto;
     padding: 0;
-    max-width: 1200px;
+
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color:#7bcc52;
 
@@ -11,10 +11,10 @@ body{
     display: flex;
     background-color: #9bbbcd;
     font-size: 1.2rem;
-    justify-content: space-evenly;
+    justify-content:space-between;
     text-align: center;
     position: sticky;
-    top: 0;
+    top: 0; 
     box-shadow: 0px 2px 10px black;
 }
 a{
@@ -23,6 +23,12 @@ a{
 }
 .navitem{
     flex: 1 1 auto;
+    margin: 10px;
+    padding: 0px;
+    border-radius: 10px;
+}
+.navitem p{
+    margin: 10px 0;
 }
 
 
@@ -32,16 +38,14 @@ a{
     color: white;
 }
 
-.menu-icon{
-    height: 10px;
-}
-
-
 
 .content{
     background-color: white;
-    padding: 40px;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .image{
     max-width: 100%;
 }
@@ -65,10 +69,13 @@ a{
 
 .actions{
     display: flex;
+    margin: 0;
     margin-top: 40px;
-    gap: 20px;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 0 50px;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
 }
 .card{
     flex: 1;
@@ -77,6 +84,8 @@ a{
     text-align: center;
     border-radius: 20px;
     transition: 0.2s ease-out;
+    margin: 20px 20px;
+    padding: 10px;
 }
 
 .card:hover{
@@ -96,72 +105,37 @@ a{
 }
 
 .card img{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     
 }
 
 
-.footer{
-    background-color: rgb(50, 50, 50);
-    color: white;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    text-align: center;
 
-}
 
 
 /*MENU BAR MOBILE */
+
 #menu{
     display: none;
 }
-
-#menubtn{
-    display: none;
-    font-size: 2rem;
-}
-.svg-container{
-    display: grid;
-    align-items: center;
-    width: 1px;
-}
-svg{
-    height: 30px;
-
-}
-
 @media screen and (max-width: 600px) {
     .nav{
         display: grid;
         grid-template-columns: 1fr;
     }
-    .svg-container{
-        display: grid;
-        justify-content: center;
-        width: 100%;
-        height: 50px;
-    }
-
-    #menubtn{
-        display: grid;
-        justify-content: center;
-        position: sticky;
-        background-color:#9bbbcd;
-    }
-    #menubtn:hover{
-        background-color: #53819b;
-    }
-
-    #menu:checked ~ .nav{
+    .toggle-view{
         display: none;
+
     }
-    #menu:not(:checked) ~ .nav{
-        display: grid;
+
+    #menu{
+        display: block;
     }
-    
+    .img-text-wrap{
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -169,6 +143,10 @@ svg{
 
 .cta{
     text-align: center;
+    padding: 20px;
+}
+.main{
+    padding: 20px;
 }
 
 .button{
@@ -188,3 +166,29 @@ svg{
 }
 
 
+
+
+.footer{
+    background-color: rgb(50, 50, 50);
+    color: white;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    row-gap: 10px;
+
+}
+
+.footer *{
+    margin: 0;
+}
+.footer-links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+}
+
+.footer-links a:hover{
+    text-decoration: underline 2px;
+}
